@@ -1,0 +1,8 @@
+![](https://github.com/YuhichYOC/Memo/blob/master/img/mysql/install/1.png)  
+![](https://github.com/YuhichYOC/Memo/blob/master/img/mysql/install/2.png)  
+![](https://github.com/YuhichYOC/Memo/blob/master/img/mysql/install/3.png)  
+![](https://github.com/YuhichYOC/Memo/blob/master/img/mysql/install/4.png)  
+![](https://github.com/YuhichYOC/Memo/blob/master/img/mysql/install/5.png)  
+![](https://github.com/YuhichYOC/Memo/blob/master/img/mysql/install/6.png)  
+![](https://github.com/YuhichYOC/Memo/blob/master/img/mysql/install/7.png)  
+![](https://github.com/YuhichYOC/Memo/blob/master/img/mysql/install/8.png)  
