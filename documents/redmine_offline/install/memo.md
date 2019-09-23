@@ -32,15 +32,11 @@ curl -O https://cache.ruby-lang.org/pub/ruby/2.4/ruby-2.4.1.tar.gz
 tar xvf ruby-2.4.1.tar.gz  
 cd ruby-2.4.1  
 ./configure --disable-install-doc  
-```  
-![05](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/05.png)  
-```bash  
 make  
-```  
-![06](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/06.png)  
-```bash  
 make install  
 ```  
+![05](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/05.png)  
+![06](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/06.png)  
 ![07](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/07.png)  
 ![08](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/08.png)  
   
@@ -57,14 +53,12 @@ http://www.redmine.org/projects/redmine/wiki/Download
 ![10](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/10.png)  
   
 1-7. 解凍, bundle 化  
-![11](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/11.png)  
 ```bash  
 bundle config build.nokogiri --use-system-libraries   ... 薄汚いノコギリめ  
-```  
-![12](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/12.png)  
-```bash  
 bundle install --without development test rmagick --path ./vendor/bundle  
 ```  
+![11](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/11.png)  
+![12](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/12.png)  
 ![13](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/13.png)  
 ![14](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/14.png)  
   
@@ -76,12 +70,12 @@ bundle package
   
 1-9. 稼働機へ移送するファイルをまとめる  
 Gemfile  
-![16](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/16.png)  
 Gemfile.lock  
-![17](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/17.png)  
 ./config/database.yml   ... 稼働機用に書き直すけど骨組みだけ持っていく  
-![18](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/18.png)  
 ./vendor/cache/*  
+![16](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/16.png)  
+![17](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/17.png)  
+![18](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/18.png)  
 ![19](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/19.png)  
 ![20](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/20.png)  
 ![21](https://github.com/YuhichYOC/Memo/blob/master/img/redmine_offline/bundle/21.png)  
