@@ -1,4 +1,4 @@
-# RedMine オフラインインストールの手順  
+# Redmine オフラインインストールの手順  
   
 以下, 手順 1 と 2 は bundle 作成機 ( オンライン ) で実行  
 手順 3 のみ稼働機 ( オフライン ) で実行  
@@ -267,7 +267,7 @@ PassengerSpawnMethod smart
 PassengerFriendlyErrorPages off  
 ```  
   
-## 3-8. postgresql の初期化と設定  
+## 3-8. PostgreSQL の初期化と設定  
   
 ### 3-8-1. 以下のコマンドを実行する  
   
@@ -275,8 +275,8 @@ PassengerFriendlyErrorPages off
 postgresql-setup initdb  
 ```  
   
-postgresql のデフォルトでは peer もしくは ident 認証が最優先となっている, パスワードを使った認証が不可能で多分オーバーライドもできない  
-この時点では redmine ユーザーで postgresql へログインできない ( OS ユーザーに redmine がいないため )  
+PostgreSQL のデフォルトでは peer もしくは ident 認証が最優先となっている, パスワードを使った認証が不可能で多分オーバーライドもできない  
+この時点では redmine ユーザーで PostgreSQL へログインできない ( OS ユーザーに redmine がいないため )  
 なので全ユーザーを md5 認証に切り替える  
   
 ### 3-8-2. postgres ユーザーのパスワード設定  
