@@ -290,8 +290,8 @@ systemctl enable postgresql.service
 ### 3-8-4. 以下の 2 行実行  
   
 ```bash  
-sudo -u postgres createuser -P redmine  
-sudo -u postgres createdb -E UTF-8 -l ja_JP.UTF-8 -O redmine -T template0 redmine  
+sudo -u postgres /var/lib/pgsql/createuser -P redmine  
+sudo -u postgres /var/lib/pgsql/createdb -E UTF-8 -l ja_JP.UTF-8 -O redmine -T template0 redmine  
 ```  
   
 PostgreSQL のデフォルトでは peer もしくは ident 認証が最優先となっている, パスワードを使った認証が不可能で多分オーバーライドもできない  
