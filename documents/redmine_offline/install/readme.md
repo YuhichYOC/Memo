@@ -232,14 +232,14 @@ gem install --local bundler-2.0.2.gem --no-rdoc --no-ri
   
 1-6 でダウンロードした gem ファイルを配置したディレクトリで以下のコマンドを実行する  
 ```bash  
-gem install --local rack --no-rdoc --no-ri  
+gem install --local rack-2.0.7.gem --no-rdoc --no-ri  
 ```  
   
 ## 3-7. passenger のインストールと初期化  
   
 1-7 でダウンロードした gem ファイルを配置したディレクトリで以下のコマンドを実行する  
 ```bash  
-gem install --local passenger --no-rdoc --no-ri  
+gem install --local passenger-6.0.4.gem --no-rdoc --no-ri  
 passenger-install-apache2-module  
 ```  
   
