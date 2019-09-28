@@ -143,7 +143,7 @@ make install
   
 1-5 でダウンロードした gem ファイルを配置したディレクトリで以下のコマンドを実行する  
 ```bash  
-gem install --local bundler --no-rdoc --no-ri  
+gem install --local bundler-2.0.2.gem --no-rdoc --no-ri  
 ```  
   
 ## 2-6. redmine 本体の解凍  
@@ -225,7 +225,7 @@ make install
   
 1-5 でダウンロードした gem ファイルを配置したディレクトリで以下のコマンドを実行する  
 ```bash  
-gem install --local bundler --no-rdoc --no-ri  
+gem install --local bundler-2.0.2.gem --no-rdoc --no-ri  
 ```  
   
 ## 3-6. rack のインストール  
