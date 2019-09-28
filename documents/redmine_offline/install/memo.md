@@ -156,14 +156,14 @@ cd redmine-4.0.4
 cp ./config/database.yml.example ./config/database.yml  
 ```  
   
-### 2-7-1. MySql を使う場合  
+### 2-7-1. MySQL を使う場合  
   
-MySql 関連の設定を編集  
+MySQL 関連の設定を編集  
   
-### 2-7-2. PostgreSql を使う場合  
+### 2-7-2. PostgreSQL を使う場合  
   
-MySql 関連の設定を削除もしくはコメントアウト  
-PostgreSql 関連の設定をコメントより復帰  
+MySQL 関連の設定を削除もしくはコメントアウト  
+PostgreSQL 関連の設定をコメントより復帰  
   
 ## 2-8. bundle 化  
   
