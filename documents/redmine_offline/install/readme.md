@@ -275,42 +275,43 @@ PassengerFriendlyErrorPages off
 postgresql-setup initdb  
 ```  
   
-PostgreSQL のデフォルトでは peer もしくは ident 認証が最優先となっている, パスワードを使った認証が不可能で多分オーバーライドもできない  
-この時点では redmine ユーザーで PostgreSQL へログインできない ( OS ユーザーに redmine がいないため )  
-なので全ユーザーを md5 認証に切り替える  
-  
-### 3-8-2. postgres ユーザーのパスワード設定  
-  
-sudo -u postgres psql  
-alter user postgres password 'postgres';  
-  
-### 3-8-3. /var/lib/pgsql/data/pg_hba.conf 以下 3 行変更  
-  
-local   all             all                                     peer  
-host    all             all             127.0.0.1/32            ident  
-host    all             all             ::1/128                 ident  
-local   all             all                                     md5  
-host    all             all             127.0.0.1/32            md5  
-host    all             all             ::1/128                 md5  
-  
-### 3-8-4. /var/lib/pgsql/data/pg_hba.conf 以下追記  
+### 3-8-2. /var/lib/pgsql/data/pg_hba.conf 以下追記  
   
 host    redmine         redmine         127.0.0.1/32            md5  
 host    redmine         redmine         ::1/128                 md5  
   
-### 3-8-5. postgresql 起動, 自動起動設定  
+### 3-8-3. postgresql 起動, 自動起動設定  
   
 ```bash  
 systemctl start postgresql.service  
 systemctl enable postgresql.service  
 ```  
   
-### 3-8-6. 以下の 2 行実行  
+### 3-8-4. 以下の 2 行実行  
   
 ```bash  
 sudo -u postgres createuser -P redmine  
 sudo -u postgres createdb -E UTF-8 -l ja_JP.UTF-8 -O redmine -T template0 redmine  
 ```  
+  
+PostgreSQL のデフォルトでは peer もしくは ident 認証が最優先となっている, パスワードを使った認証が不可能で多分オーバーライドもできない  
+この時点では redmine ユーザーで PostgreSQL へログインできない ( OS ユーザーに redmine がいないため )  
+なので全ユーザーを md5 認証に切り替える  
+  
+### 3-8-5. postgres ユーザーのパスワード設定  
+  
+sudo -u postgres psql  
+alter user postgres password 'postgres';  
+  
+### 3-8-6. /var/lib/pgsql/data/pg_hba.conf 以下 3 行変更  
+  
+local   all             all                                     peer  
+host    all             all             127.0.0.1/32            ident  
+host    all             all             ::1/128                 ident  
+↓↓↓  
+local   all             all                                     md5  
+host    all             all             127.0.0.1/32            md5  
+host    all             all             ::1/128                 md5  
   
 ## 3-9. 移送ファイルの解凍, DBMS 設定の記入  
   
