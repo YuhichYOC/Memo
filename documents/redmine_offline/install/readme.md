@@ -186,7 +186,7 @@ bundle install --without development test --path ./vendor/bundle
 2-8 完了時点の redmine 本体を配置したディレクトリをアーカイブする  
   
   
-# 3. redmine 稼働機  
+# 3. Redmine 稼働機  
   
 ## 3-1. SELinux の無効化  
   
@@ -280,31 +280,37 @@ postgresql-setup initdb
 host    redmine         redmine         127.0.0.1/32            md5  
 host    redmine         redmine         ::1/128                 md5  
   
-### 3-8-3. postgresql 起動, 自動起動設定  
+### 3-8-3. PostgreSQL 起動, 自動起動設定  
   
 ```bash  
 systemctl start postgresql.service  
 systemctl enable postgresql.service  
 ```  
   
-### 3-8-4. 以下の 2 行実行  
+### 3-8-4. redmine ユーザー作成  
   
+以下 2 行を PostgreSQL インストールディレクトリ /var/lib/pgsql で実行  
 ```bash  
-sudo -u postgres /var/lib/pgsql/createuser -P redmine  
-sudo -u postgres /var/lib/pgsql/createdb -E UTF-8 -l ja_JP.UTF-8 -O redmine -T template0 redmine  
+sudo -u postgres createuser -P redmine  
+sudo -u postgres createdb -E UTF-8 -l ja_JP.UTF-8 -O redmine -T template0 redmine  
 ```  
+  
+### 3-8-5. postgres ユーザーのパスワード設定  
+  
   
 PostgreSQL のデフォルトでは peer もしくは ident 認証が最優先となっている, パスワードを使った認証が不可能で多分オーバーライドもできない  
 この時点では redmine ユーザーで PostgreSQL へログインできない ( OS ユーザーに redmine がいないため )  
 なので全ユーザーを md5 認証に切り替える  
-  
-### 3-8-5. postgres ユーザーのパスワード設定  
-  
+```bash  
 sudo -u postgres psql  
+```  
+```sql
 alter user postgres password 'postgres';  
+```
   
 ### 3-8-6. /var/lib/pgsql/data/pg_hba.conf 以下 3 行変更  
   
+```sh  
 local   all             all                                     peer  
 host    all             all             127.0.0.1/32            ident  
 host    all             all             ::1/128                 ident  
@@ -312,13 +318,15 @@ host    all             all             ::1/128                 ident
 local   all             all                                     md5  
 host    all             all             127.0.0.1/32            md5  
 host    all             all             ::1/128                 md5  
-  
+```  
+
 ## 3-9. 移送ファイルの解凍, DBMS 設定の記入  
   
 ### 3-9-1. 2-9 で作成したアーカイブを /var/lib/redmine 以下に配置, 解凍する  
   
 ### 3-9-2. /var/lib/redmine/redmine-4.0.4/config/database.yml へ稼働機用の設定を記入  
   
+```sh  
 production:  
   adapter: postgresql  
   database: redmine  
@@ -326,6 +334,7 @@ production:
   username: redmine  
   password: "redmine"  
   encoding: utf8  
+```  
   
 ## 3-10. セッション改ざん防止用秘密鍵の作成  
   
@@ -359,7 +368,9 @@ ln -s /var/lib/redmine/redmine-4.0.4/public /var/www/html/redmine
 ### 3-10-3. http リクエストリダイレクト設定の記入  
   
 /etc/httpd/conf.d/redmine.conf に以下の内容を追記  
+```sh  
 RackBaseURI /redmine  
+```  
   
 ### 3-10-4. apache2 再起動  
   
