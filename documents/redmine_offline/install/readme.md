@@ -319,7 +319,13 @@ local   all             all                                     md5
 host    all             all             127.0.0.1/32            md5  
 host    all             all             ::1/128                 md5  
 ```  
-
+  
+### 3-8-7. PostgreSQL 再起動  
+  
+```bash  
+systemctl restart postgresql.service  
+```  
+  
 ## 3-9. 移送ファイルの解凍, DBMS 設定の記入  
   
 ### 3-9-1. 2-9 で作成したアーカイブを /var/lib/redmine 以下に配置, 解凍する  
