@@ -349,7 +349,7 @@ production:
 bundle exec rake generate_secret_token  
 ```  
   
-## 3-11. postgresql 初期データ作成  
+## 3-11. PostgreSQL 初期データ作成  
   
 3-9 で redmine 本体を配置したディレクトリで以下のコマンドを実行する  
 ```bash  
@@ -365,7 +365,7 @@ RAILS_ENV=production REDMINE_LANG=ja bundle exec rake redmine:load_default_data
 chown -R apache:apache /var/lib/redmine  
 ```  
   
-### 3-10-2. URL : http://[サーバー]/ ではなく http://[サーバー]/redmine で redmine へ接続できるようにリンク作成  
+### 3-10-2. URL : http://[稼働機]/ ではなく http://[稼働機]/redmine で redmine へ接続できるようにリンク作成  
   
 ```bash  
 ln -s /var/lib/redmine/redmine-4.0.4/public /var/www/html/redmine  
