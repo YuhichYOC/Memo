@@ -4,6 +4,35 @@
 手順 3 のみ稼働機 ( オフライン ) で実行  
   
   
+# 0. パッケージ一覧  
+  
+## 0-1. 必須パッケージ  
+  
+gcc  
+gcc-c++  
+openssl-devel  
+readline-devel  
+zlib-devel  
+curl-devel  
+libyaml-devel  
+httpd  
+httpd-devel  
+ImageMagick  
+ImageMagick-devel  
+ipa-pgothic-fonts  
+  
+## 0-2. RDBMS ... 任意  
+  
+### 0-2-1. PostgreSQL  
+  
+postgresql-server  
+postgresql-devel  
+  
+### 0-2-2. MySQL  
+  
+https://dev.mysql.com/doc/refman/5.6/ja/linux-installation-yum-repo.html  
+  
+  
 # 1. パッケージダウンロード  
   
 ## 1-1. ダウンロード用パッケージのインストール  
@@ -304,9 +333,9 @@ PostgreSQL のデフォルトでは peer もしくは ident 認証が最優先�
 ```bash  
 sudo -u postgres psql  
 ```  
-```sql
+```sql  
 alter user postgres password 'postgres';  
-```
+```  
   
 ### 3-8-6. /var/lib/pgsql/data/pg_hba.conf 以下 3 行変更  
   
