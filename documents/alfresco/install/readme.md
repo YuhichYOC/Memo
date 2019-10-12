@@ -35,5 +35,9 @@ cd docker-compose
 docker-compose up
 ```
   
+## 8.  
 docker グループに Alfresco 起動ユーザーを追加  
 /var/run/docker.sock ( unix ドメインソケット ) への書き込み権限を付与する  
+```bash
+usermod -aG docker [ユーザー]
+```
