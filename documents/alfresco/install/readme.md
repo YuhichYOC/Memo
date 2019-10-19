@@ -83,6 +83,12 @@ docker イメージを格納しているディレクトリ
 ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -g /media/y/images/docker  
   
 ## XX.  
+docker イメージ削除  
+```bash  
+docker rm [イメージ]  
+```  
+  
+## XX.  
 logicalDOC コンテナ起動  
 ```bash  
 docker run -p 8080:8080 [イメージ]  
