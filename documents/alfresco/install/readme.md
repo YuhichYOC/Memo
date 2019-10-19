@@ -46,7 +46,8 @@ usermod -aG docker [ユーザー]
 ## XX.  
 LogicalDOC コンテナ取得 & 開始  
 ```bash  
-docker run -p 8080:8080 logicaldoc/logicaldoc-ce762  
+docker run -d --name=mysql-ld --env="MYSQL_ROOT_PASSWORD=mypassword" --env="MYSQL_DATABASE=logicaldoc" --env="MYSQL_USER=ldoc" --env="MYSQL_PASSWORD=changeme" mysql:8.0  
+docker run -d -p 8080:8080 --link mysql-ld logicaldoc/logicaldoc-ce  
 ```  
   
 ## XX.  
@@ -68,6 +69,18 @@ docker stop [イメージ]
 ```  
   
 ## XX.  
+マウント  
+```bash  
+docker run -d -p 8080:8080 -v /media/pi/images/docker:/media/docker --link mysql-ld logicaldoc/logicaldoc-ce  
+```  
+  
+## XX.  
+実行中コンテナへアタッチ  
+```bash  
+docker exec -i -t [コンテナ] /bin/bash  
+```  
+  
+## XX.  
 ディスク使用量の表示 ( ディレクトリ全体 )  
 ```bash  
 du -sm [パス]  
@@ -80,7 +93,7 @@ docker イメージを格納しているディレクトリ
 ## XX.  
 イメージ格納先変更  
 /lib/systemd/system/docker.service  
-ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -g /media/y/images/docker  
+ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -g /media/pi/images/docker  
   
 ## XX.  
 コンテナ一覧の確認  
