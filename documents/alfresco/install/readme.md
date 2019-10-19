@@ -126,3 +126,22 @@ docker run -p 8080:8080 [イメージ]
 ## XX.  
 LogicalDOC アドレス  
 http://localhost:8080/logicaldoc/login.jsp  
+  
+  
+## XX.  
+外付けディスクで raspberry pi を起動する方法  
+```bash  
+# /dev/sda アンマウント状態で開始  
+sudo dd if=/dev/mmcblk0p7 of=/dev/sda1 bs=32M conv=noerror,sync  
+# すべて yes  
+sudo e2fsck -f /dev/sda1  
+sudo resize2fs /dev/sda1  
+sudo mount /dev/sda1 /mnt  
+sudo vi /mnt/etc/fstab  
+# /dev/sda1 | / | ext4 | defaults,noatime | 0 | 1  
+# SD カード側の /boot  
+cd /boot  
+sudo vi cmdline.txt  
+# root=/dev/mmblk0p7 -> root=/dev/sda1  
+# 以上で完了, 再起動を行うと /dev/sda1 を / にして起動する  
+```  
