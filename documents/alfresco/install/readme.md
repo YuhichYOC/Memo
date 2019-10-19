@@ -85,7 +85,7 @@ ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
 ## XX.  
 docker イメージ削除  
 ```bash  
-docker rm [イメージ]  
+docker rmi [イメージ]  
 ```  
   
 ## XX.  
