@@ -83,6 +83,22 @@ docker イメージを格納しているディレクトリ
 ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -g /media/y/images/docker  
   
 ## XX.  
+コンテナ一覧の確認  
+```bash  
+docker ps  
+```  
+コンテナ一覧 ( 停止中を含む ) の確認  
+```bash  
+docker ps -a  
+```  
+  
+## XX.  
+docker コンテナ削除  
+```bash  
+docker rm [コンテナ]  
+```  
+  
+## XX.  
 docker イメージ削除  
 ```bash  
 docker rmi [イメージ]  
