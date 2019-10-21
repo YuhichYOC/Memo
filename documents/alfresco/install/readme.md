@@ -145,3 +145,6 @@ sudo vi cmdline.txt
 # root=/dev/mmblk0p7 -> root=/dev/sda1  
 # 以上で完了, 再起動を行うと /dev/sda1 を / にして起動する  
 ```  
+  
+## XX.  
+https://280blocker.net/files/280blocker_adblock_nanj.txt  
