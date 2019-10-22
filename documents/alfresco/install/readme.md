@@ -148,3 +148,19 @@ sudo vi cmdline.txt
   
 ## XX.  
 https://280blocker.net/files/280blocker_adblock_nanj.txt  
+  
+## XX.  
+Disable Unattended Upgrades  
+https://www.linuxbabe.com/ubuntu/upgrade-could-not-get-lock-var-lib-dpkg-lock  
+```bash  
+/etc/apt/apt.conf.d/20auto-upgrades  
+APT::Periodic::Update-Package-Lists "1";  
+APT::Periodic::Download-Upgradeable-Packages "1";  
+APT::Periodic::AutocleanInterval "0";  
+APT::Periodic::Unattended-Upgrade "1";  
+↓↓↓  
+APT::Periodic::Update-Package-Lists "1";  
+APT::Periodic::Download-Upgradeable-Packages "0";  
+APT::Periodic::AutocleanInterval "0";  
+APT::Periodic::Unattended-Upgrade "0";  
+```  
