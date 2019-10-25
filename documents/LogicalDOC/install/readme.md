@@ -1,18 +1,30 @@
 # LogicalDoc ce インストール  
   
-## 1. PostgreSQL インストール  
+## 1. ufw インストール  
+```bash
+sudo apt install ufw
+```
+  
+## 2. ufw 設定  
+```bash
+sudo ufw default deny
+sudo ufw allow from 192.168.0.0/24
+sudo ufw enable
+```
+  
+## 3. PostgreSQL インストール  
 ```bash
 sudo apt install postgresql-11
 ```
   
-## 2. postgres ユーザーのパスワード変更
+## 4. postgres ユーザーのパスワード変更
 ```bash
 psql -U postgres
 => alter user postgres password ['パスワード'];
 => \q
 ```
   
-## 3. peer 認証解除  
+## 5. peer 認証解除  
 ```bash
 systemctl stop postgresql
 sudo vi /etc/postgresql/11/pg_hba.conf
@@ -20,7 +32,7 @@ sudo vi /etc/postgresql/11/pg_hba.conf
 systemctl start postgresql
 ```
   
-## 4. LogicalDoc 用ユーザー作成  
+## 6. LogicalDoc 用ユーザー作成  
 ```bash
 psql -U postgres
 [パスワード入力]
@@ -28,7 +40,7 @@ psql -U postgres
 => \q
 ```
   
-## 5. LogicalDoc データベース作成  
+## 7. LogicalDoc データベース作成  
 ```bash
 psql -U postgres
 [パスワード入力]
@@ -36,4 +48,4 @@ psql -U postgres
 => \q
 ```
   
-## 6. LogicalDoc 8.3.2 tomcat bundle ダウンロード  
+## 8. LogicalDoc 8.3.2 tomcat bundle ダウンロード  
