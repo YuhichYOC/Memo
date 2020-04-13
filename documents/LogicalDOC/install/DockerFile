@@ -1,0 +1,25 @@
+FROM openjdk:latest
+
+RUN mkdir /opt/logicaldoc
+RUN mkdir /opt/logicaldoc/repo
+
+RUN apt update \
+ && apt -y upgrade \
+ && apt -y install software-properties-common \
+      curl \
+      unzip \
+      imagemagick \
+      ghostscript \
+      python-jinja2 \
+      python-pip \
+      vim \
+      nano
+
+RUN curl -L https://sourceforge.net/projects/logicaldoc/files/distribution/LogicalDOC%20CE%208.3/logicaldoc-8.3.4-tomcat-bundle.zip/download \
+    -o /opt/logicaldoc/logicaldoc-8.3.4-tomcat-bundle.zip \
+ && unzip /opt/logicaldoc/logicaldoc-8.3.4-tomcat-bundle.zip -d /opt/logicaldoc \
+ && rm /opt/logicaldoc/logicaldoc-8.3.4-tomcat-bundle.zip
+
+RUN pip install j2cli
+
+EXPOSE 8080
