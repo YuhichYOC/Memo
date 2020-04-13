@@ -20,6 +20,12 @@ RUN curl -L https://sourceforge.net/projects/logicaldoc/files/distribution/Logic
  && unzip /opt/logicaldoc/logicaldoc-8.3.4-tomcat-bundle.zip -d /opt/logicaldoc \
  && rm /opt/logicaldoc/logicaldoc-8.3.4-tomcat-bundle.zip
 
+RUN chmod 744 /opt/logicaldoc/logicaldoc-8.3.4-tomcat-bundle/bin/catalina.sh
+RUN chmod 744 /opt/logicaldoc/logicaldoc-8.3.4-tomcat-bundle/bin/startup.sh
+RUN chmod 744 /opt/logicaldoc/logicaldoc-8.3.4-tomcat-bundle/bin/shutdown.sh
+RUN ln -s /opt/logicaldoc/logicaldoc-8.3.4-tomcat-bundle/bin/startup.sh /opt/logicaldoc/ldup
+RUN ln -s /opt/logicaldoc/logicaldoc-8.3.4-tomcat-bundle/bin/shutdown.sh /opt/logicaldoc/lddown
+
 RUN pip install j2cli
 
 EXPOSE 8080
