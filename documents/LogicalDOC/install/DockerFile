@@ -1,10 +1,11 @@
-FROM openjdk:latest
+FROM ubuntu
 
 RUN mkdir /opt/logicaldoc
 RUN mkdir /opt/logicaldoc/repo
 
 RUN apt update \
  && apt -y upgrade \
+ && apt -y install openjdk-11-jdk \
  && apt -y install software-properties-common \
       curl \
       unzip \
