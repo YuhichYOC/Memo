@@ -10,4 +10,5 @@ sudo crontab -e
 ## 2. 温度測定  
 ```bash
 vcgencmd measure_temp
+cat /sys/class/thermal/thermal_zone0/temp
 ```
