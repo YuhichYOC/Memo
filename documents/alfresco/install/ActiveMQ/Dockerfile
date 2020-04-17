@@ -15,3 +15,8 @@ RUN wget -O /opt/activemq/apache-activemq-5.15.12-bin.tar.gz "http://www.apache.
 
 RUN chmod 744 /opt/activemq/apache-activemq-5.15.12/bin/activemq
 RUN ln -s /opt/activemq/apache-activemq-5.15.12/bin/activemq /opt/activemq
+
+EXPOSE 5672
+EXPOSE 8161
+EXPOSE 61613
+EXPOSE 61616
