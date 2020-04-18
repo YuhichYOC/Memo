@@ -27,7 +27,7 @@ RUN wget -O /opt/alfresco/alfresco-content-services-community-distribution-6.1.2
   && mv /opt/alfresco/alfresco-content-services-community-distribution-6.1.2-ga/web-server/conf/Catalina/localhost/* /opt/alfresco/apache-tomcat-9.0.34/conf/ \
   && mv /opt/alfresco/alfresco-content-services-community-distribution-6.1.2-ga/web-server/lib/* /opt/alfresco/apache-tomcat-9.0.34/lib/ \
   && rm -rf /opt/alfresco/alfresco-content-services-community-distribution-6.1.2-ga \
-  && rm /opt/alfresco/apache-tomcat-9.0.34/webapps/alfresco-content-services-community-distribution-6.1.2-ga.zip
+  && rm /opt/alfresco/alfresco-content-services-community-distribution-6.1.2-ga.zip
 
 COPY ./server.xml.append /opt/alfresco/
 COPY ./alfresco-global.properties.sample /opt/alfresco/
