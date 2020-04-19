@@ -33,3 +33,9 @@ sudo /opt/alfresco/apache-tomcat-9.0.34/bin/startup.sh
 ```bash
 sudo /opt/alfresco/apache-tomcat-9.0.34/bin/shutdown.sh
 ```
+  
+## 起動確認  
+  
+```bash
+sudo tail -n 50 -f ./alfresco.log
+```
