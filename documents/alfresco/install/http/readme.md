@@ -39,3 +39,7 @@ sudo /opt/alfresco/apache-tomcat-9.0.34/bin/shutdown.sh
 ```bash
 sudo tail -n 50 -f ./alfresco.log
 ```
+  
+### メモ  
+  
+- Share サービスがインストールされていない
