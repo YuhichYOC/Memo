@@ -74,23 +74,6 @@
         maxHttpHeaderSize="32768"
         redirectPort="8443"
         />
-    <Connector
-        port="8443"
-        protocol="org.apache.coyote.http11.http11NioProtocol"
-        SSLEnabled="true"
-        maxThreads="150"
-        scheme="https"
-        keystoreFile="changeme_alf_keystore/ssl.keystore"
-        keystorePass="changeme_alf_password"
-        keystoreType="JCEKS" 
-        secure="true"
-        connectionTimeout="240000"
-        truststoreFile="changeme_alf_keystore/ssl.truststore"
-        truststorePass="changeme_alf_password"
-        truststoreType="JCEKS"
-        clientAuth="want"
-        sslProtocol="TLS"
-        />
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
