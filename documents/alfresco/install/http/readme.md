@@ -9,7 +9,7 @@ sudo ufw allow to any port 8983 proto tcp from any
 ```bash
 sudo ufw delete allow to any port 8983 proto tcp from any
 ```
-
+  
 ## Solr 起動コマンド  
   
 ```bash
@@ -20,4 +20,16 @@ sudo ufw delete allow to any port 8983 proto tcp from any
   
 ```bash
 sudo /opt/alfresco/alfresco-search-services/solr/bin/solr start -force -a "-Dcreate.alfresco.defaults=alfresco,archive"
+```
+  
+## Tomcat 起動コマンド  
+  
+```bash
+sudo /opt/alfresco/apache-tomcat-9.0.34/bin/startup.sh
+```
+  
+## Tomcat 停止コマンド  
+  
+```bash
+sudo /opt/alfresco/apache-tomcat-9.0.34/bin/shutdown.sh
 ```
