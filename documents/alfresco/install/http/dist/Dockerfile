@@ -13,6 +13,10 @@ RUN wget -O /opt/alfresco/apache-tomcat-9.0.34.zip "http://ftp.kddilabs.jp/infos
       && unzip /opt/alfresco/apache-tomcat-9.0.34.zip -d /opt/alfresco/ \
       && rm /opt/alfresco/apache-tomcat-9.0.34.zip
 
+RUN chmod 754 /opt/alfresco/apache-tomcat-9.0.34/bin/catalina.sh
+RUN chmod 754 /opt/alfresco/apache-tomcat-9.0.34/bin/startup.sh
+RUN chmod 754 /opt/alfresco/apache-tomcat-9.0.34/bin/shutdown.sh
+
 RUN wget -O /opt/alfresco/alfresco-content-services-community-distribution-6.1.2-ga.zip "https://download.alfresco.com/cloudfront/release/community/201901-GA-build-205/alfresco-content-services-community-distribution-6.1.2-ga.zip" \
       && unzip /opt/alfresco/alfresco-content-services-community-distribution-6.1.2-ga.zip -d /opt/alfresco/ \
       && rm -rf /opt/alfresco/apache-tomcat-9.0.34/webapps/* \
