@@ -23,6 +23,7 @@ RUN wget -O /opt/alfresco/alfresco-content-services-community-distribution-6.1.2
       && mv /opt/alfresco/alfresco-content-services-community-distribution-6.1.2-ga/web-server/webapps/* /opt/alfresco/apache-tomcat-9.0.34/webapps/ \
       && mv /opt/alfresco/alfresco-content-services-community-distribution-6.1.2-ga/web-server/conf/Catalina/localhost/* /opt/alfresco/apache-tomcat-9.0.34/conf/ \
       && mv /opt/alfresco/alfresco-content-services-community-distribution-6.1.2-ga/web-server/lib/* /opt/alfresco/apache-tomcat-9.0.34/lib/ \
+      && mv /opt/alfresco/alfresco-content-services-community-distribution-6.1.2-ga/amps/alfresco-share-services.amp /opt/alfresco/apache-tomcat-9.0.34/amps/ \
       && mv /opt/alfresco/alfresco-content-services-community-distribution-6.1.2-ga/bin/alfresco-mmt.jar /opt/alfresco/apache-tomcat-9.0.34/bin/ \
       && rm -rf /opt/alfresco/alfresco-content-services-community-distribution-6.1.2-ga \
       && rm /opt/alfresco/alfresco-content-services-community-distribution-6.1.2-ga.zip
