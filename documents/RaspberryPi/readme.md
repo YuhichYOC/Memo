@@ -30,3 +30,8 @@ sudo restore -rf /home/pi/backup/yyyymmdd/sdb1.dump
 ```bash
 dd if=[コピー元デバイス] of=[コピー先デバイス] bs=32M conv=noerror,sync
 ```
+
+## 6. ファイルシステムの表示
+```bash
+lsblk --fs
+```
