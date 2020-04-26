@@ -20,7 +20,6 @@ RUN wget -O /opt/alfresco/alfresco-content-services-community-distribution-6.1.2
       && mkdir -p /opt/alfresco/apache-tomcat-9.0.34/shared/lib \
       && mkdir /opt/alfresco/apache-tomcat-9.0.34/amps \
       && mkdir /opt/alfresco/apache-tomcat-9.0.34/amps_share \
-      && mkdir /opt/alfresco/apache-tomcat-9.0.34/temp \
       && mkdir /opt/alfresco/apache-tomcat-9.0.34/work \
       && rm -rf /opt/alfresco/apache-tomcat-9.0.34/webapps/* \
       && mv /opt/alfresco/alfresco-content-services-community-distribution-6.1.2-ga/web-server/webapps/* /opt/alfresco/apache-tomcat-9.0.34/webapps/ \
